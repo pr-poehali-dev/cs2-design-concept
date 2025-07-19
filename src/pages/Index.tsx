@@ -3,26 +3,26 @@ import Icon from "@/components/ui/icon";
 
 const Index = () => {
   const mainRoster = [
-    { name: "romapriroda", role: "IGL/Entry" },
+    { name: "romapriroda", role: "Rifle" },
     { name: "Terl1ght", role: "AWP" },
-    { name: "CyBoRG01", role: "Rifler" },
-    { name: "d3c1ded", role: "Support" },
-    { name: "WITZKZY", role: "Lurker" }
+    { name: "CyBoRG01", role: "Rifle" },
+    { name: "d3c1ded", role: "IGL" },
+    { name: "WITZKZY", role: "Rifle" }
   ];
 
   const reserveRoster = [
-    { name: "FAZYBTW", role: "Rifler" },
-    { name: "gE-NO", role: "Support" },
-    { name: "POMA86", role: "Entry" }
+    { name: "FAZYBTW", role: "Rifle" },
+    { name: "gE-NO", role: "Rifle" },
+    { name: "POMA86", role: "Rifle" }
   ];
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-gradient-to-br from-red-900 via-red-950 to-black relative">
+    <div className="min-h-screen bg-gradient-to-br from-red-900 via-red-950 to-black relative">
       {/* Background effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(220,38,38,0.1),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(239,68,68,0.05),transparent_50%)]"></div>
       
-      <div className="h-full flex flex-col justify-center px-8">
+      <div className="container mx-auto px-8 py-16">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
           <div className="flex items-center justify-center mb-4">
