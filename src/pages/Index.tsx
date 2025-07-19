@@ -1,14 +1,13 @@
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
   const mainRoster = [
-    { name: "romapriroda", role: "IGL/Entry", rating: "1.24", kd: "1.31" },
-    { name: "Terl1ght", role: "AWP", rating: "1.18", kd: "1.15" },
-    { name: "CyBoRG01", role: "Rifler", rating: "1.09", kd: "1.02" },
-    { name: "d3c1ded", role: "Support", rating: "0.98", kd: "0.94" },
-    { name: "WITZKZY", role: "Lurker", rating: "1.12", kd: "1.08" }
+    { name: "romapriroda", role: "IGL/Entry" },
+    { name: "Terl1ght", role: "AWP" },
+    { name: "CyBoRG01", role: "Rifler" },
+    { name: "d3c1ded", role: "Support" },
+    { name: "WITZKZY", role: "Lurker" }
   ];
 
   const reserveRoster = [
@@ -42,107 +41,48 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-8 max-w-7xl mx-auto w-full">
+        {/* Main Content */}
+        <div className="max-w-4xl mx-auto">
           {/* Main Roster */}
-          <div className="col-span-2">
-            <Card className="bg-black/40 border-red-600/50 backdrop-blur-md p-8 shadow-2xl">
-              <div className="flex items-center mb-8">
-                <Icon name="Users" size={32} className="text-red-400 mr-3" />
-                <h2 className="text-4xl font-bold font-oswald text-white">
-                  MAIN ROSTER
-                </h2>
-                <div className="ml-auto">
-                  <Badge className="bg-red-600 text-white text-lg px-4 py-2">ACTIVE</Badge>
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                {mainRoster.map((player, index) => (
-                  <div 
-                    key={player.name}
-                    className="group bg-gradient-to-r from-red-950/50 to-black/50 border border-red-800/30 rounded-lg p-4 transition-all duration-300 hover:border-red-500/60 hover:shadow-lg hover:shadow-red-500/20"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <span className="text-red-400 mr-4 text-2xl group-hover:scale-110 transition-transform">✦</span>
-                        <div>
-                          <div className="text-2xl font-bold text-white font-roboto">{player.name}</div>
-                          <div className="text-sm text-red-300 font-medium">{player.role}</div>
-                        </div>
-                      </div>
-                      <div className="flex space-x-6 text-right">
-                        <div>
-                          <div className="text-xs text-gray-400">RATING</div>
-                          <div className="text-lg font-bold text-green-400">{player.rating}</div>
-                        </div>
-                        <div>
-                          <div className="text-xs text-gray-400">K/D</div>
-                          <div className="text-lg font-bold text-blue-400">{player.kd}</div>
-                        </div>
-                      </div>
+          <Card className="bg-black/40 border-red-600/50 backdrop-blur-md p-10 shadow-2xl mb-8">
+            <div className="flex items-center justify-center mb-10">
+              <Icon name="Users" size={36} className="text-red-400 mr-4" />
+              <h2 className="text-5xl font-bold font-oswald text-white">
+                ROSTER ⚡
+              </h2>
+            </div>
+            
+            <div className="space-y-6">
+              {mainRoster.map((player, index) => (
+                <div 
+                  key={player.name}
+                  className="group bg-gradient-to-r from-red-950/50 to-black/50 border border-red-800/30 rounded-lg p-6 transition-all duration-300 hover:border-red-500/60 hover:shadow-lg hover:shadow-red-500/20 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="flex items-center">
+                    <span className="text-red-400 mr-6 text-4xl group-hover:scale-110 transition-transform">✦</span>
+                    <div className="flex-1">
+                      <div className="text-3xl font-bold text-white font-roboto">{player.name}</div>
+                      <div className="text-lg text-red-300 font-medium mt-1">{player.role}</div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </Card>
-          </div>
-
-          {/* Reserve & Info */}
-          <div className="space-y-6">
-            {/* Reserve Roster */}
-            <Card className="bg-black/30 border-gray-600/40 backdrop-blur-md p-6">
-              <div className="flex items-center mb-6">
-                <Icon name="Clock" size={24} className="text-yellow-500 mr-3" />
-                <h3 className="text-xl font-oswald text-white">RESERVE</h3>
-              </div>
-              <div className="space-y-3">
-                {reserveRoster.map((player, index) => (
-                  <div key={player.name} className="flex items-center justify-between bg-gray-900/50 rounded p-3">
-                    <div>
-                      <div className="text-white font-medium">{player.name}</div>
-                      <div className="text-xs text-gray-400">{player.role}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-
-            {/* Team Stats */}
-            <Card className="bg-black/30 border-green-600/40 backdrop-blur-md p-6">
-              <div className="flex items-center mb-4">
-                <Icon name="TrendingUp" size={24} className="text-green-400 mr-3" />
-                <h3 className="text-lg font-oswald text-white">TEAM STATS</h3>
-              </div>
-              <div className="space-y-3">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Win Rate</span>
-                  <span className="text-green-400 font-bold">73%</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Maps Played</span>
-                  <span className="text-blue-400 font-bold">142</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Avg. Rating</span>
-                  <span className="text-yellow-400 font-bold">1.12</span>
-                </div>
-              </div>
-            </Card>
+              ))}
+            </div>
+          </Card>
 
-            {/* Achievements */}
-            <Card className="bg-black/30 border-yellow-600/40 backdrop-blur-md p-6">
-              <div className="flex items-center mb-4">
-                <Icon name="Award" size={24} className="text-yellow-500 mr-3" />
-                <h3 className="text-lg font-oswald text-white">ACHIEVEMENTS</h3>
+          {/* Reserve Roster */}
+          <Card className="bg-black/30 border-gray-600/40 backdrop-blur-md p-8">
+            <div className="flex items-center justify-center mb-8">
+              <span className="text-yellow-500 mr-4 text-3xl">⏳</span>
+              <h3 className="text-2xl font-oswald text-gray-300">RESERVE</h3>
+            </div>
+            <div className="text-center">
+              <div className="text-xl text-gray-400 font-roboto">
+                {reserveRoster.map(player => player.name).join(" | ")}
               </div>
-              <div className="space-y-2">
-                <div className="text-sm text-yellow-400">🥇 Regional Champions 2024</div>
-                <div className="text-sm text-gray-300">🥈 Major Qualifier</div>
-                <div className="text-sm text-gray-300">🥉 Season League</div>
-              </div>
-            </Card>
-          </div>
+            </div>
+          </Card>
         </div>
       </div>
     </div>
